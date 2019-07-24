@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
+import './style/index.scss';
 import Home from './pages/Home';
 import { Provider } from 'react-redux'
 import { Route, Switch } from 'react-router' // react-router v4/v5

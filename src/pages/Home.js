@@ -1,6 +1,6 @@
 import React from 'react';
 import Counter from '../components/Counter'
-import '../App.scss';
+import '../style/App.scss';
 
 class Home extends React.Component {
   render(){
