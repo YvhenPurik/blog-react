@@ -4,7 +4,7 @@ import { routerMiddleware } from 'connected-react-router'
 import createRootReducer from './reducers'
 import createSagaMiddleware from 'redux-saga';
 
-import {saga} from './sagas';
+import rootSaga from './sagas';
 
 
 const sagaMiddleware = createSagaMiddleware();
@@ -23,7 +23,7 @@ export default function configureStore(preloadedState) {
       ),
     ),
   )
-  sagaMiddleware.run(saga)
+  sagaMiddleware.run(rootSaga)
  
   return store
 }
