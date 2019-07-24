@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) => (
     console.log(value),
+    
  <div>
     <button onClick={onIncrement}>Increment</button>{' '}
     <button onClick={onDecrement}>Decrement</button>{' '}
