@@ -1,43 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import fetchData from '../sagas/index'
+import {fetchPosts, updateAuthorFilter} from '../actions/posts';
 
-const Counter = ({ value, onIncrement, onDecrement, onIncrementAsync }) => (
-    console.log(value),
-    
- <div>
-    <button onClick={onIncrement}>Increment</button>{' '}
-    <button onClick={onDecrement}>Decrement</button>{' '}
-    <button onClick={onIncrementAsync}>Increment after 1 second</button>
-    <hr />
-    <div>Clicked: {value.counter} times</div>
-  </div>
-);
 
-Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
-};
+class Counter extends React.Component {
+  componentDidMount() {
+      
+          this.fetchPosts();
+  }
 
-const mapStateToProps = state => {
+  onItemClickHandler = (postId) => {
+      this.props.changePageTo('/details', postId);
+  };
+
+  fetchPosts = () => {
+      this.props.fetchPosts();
+  };
+
+  filterChangedHandler = (event) => {
+      const author = event.target.value;
+
+      this.props.updateAuthorFilter(author);
+  };
+
+  render() {
+      let posts = <p>No posts</p>;
+      console.log(this.props.authorName)
+      
+      return (<div className="posts">
+              <main>
+                  <div className="posts__options">
+                      
+                      <div className="posts__counter">Available posts:</div>
+                  </div>
+                  {posts}
+              </main>
+          </div>
+      )
+  };
+}
+
+
+
+const stateToProps = state => {
   return {
-    value: state
+      authorName: state,
+     
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const dispatchToProps = dispatch => {
   return {
-    onIncrement: () => dispatch({ type: 'INCREMENT' }),
-    onDecrement: () => dispatch({ type: 'DECREMENT' }),
-    onIncrementAsync: () => {
-      dispatch({ type: 'INCREMENT_ASYNNC' });
-      dispatch({ type: 'log_out' });
-    }
+      fetchPosts: () => dispatch(fetchPosts()),
+      updateAuthorFilter: (author) => dispatch(updateAuthorFilter(author)),
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter);
+export default connect(stateToProps, dispatchToProps)(Counter);

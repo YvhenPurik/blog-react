@@ -9,7 +9,8 @@ import {
     take,
     fork
   } from 'redux-saga/effects';
-  
+  import * as actionType from '../actions/types';
+  import { fetchPostsSaga, fetchPostDetailsSaga, addCommentSaga, deleteCommentSaga }  from './posts';
   export function* helloSaga() {
     console.log('hello world');
   }
@@ -23,21 +24,30 @@ import {
     yield takeLatest('INCREMENT_ASYNNC', incrementAsync);
   }
   
-  export function* test() {
-    while (true) {
-      console.log('enter');
-      const state = yield select(state => state);
-      console.log(state, ' before take');
-      yield take('log_out');
-      console.log(state, 'after take');
-    }
-  }
   
-  export default function* rootSaga() {
-    // yield all([helloSaga(), watchIncrementAsync()]);
-    // yield fork(test);
-  
-    yield fork(helloSaga);
-    yield fork(watchIncrementAsync);
-    yield fork(test);
-  }
+
+
+function* watchPosts() {
+    yield takeLatest(actionType.POST_LIST_FETCH_START, fetchPostsSaga);
+}
+
+function* watchPostDetails() {
+    yield takeLatest(actionType.POST_DETAILS_FETCH_START, fetchPostDetailsSaga);
+}
+
+function* watchCommentAdd() {
+    yield takeLatest(actionType.POST_COMMENT_ADD_START, addCommentSaga);
+}
+
+function* watchCommentDelete() {
+    yield takeLatest(actionType.POST_COMMENT_DELETE_START, deleteCommentSaga);
+}
+
+export function* rootSaga() {
+    yield all([
+        watchPosts(),
+        watchPostDetails(),
+        watchCommentAdd(),
+        watchCommentDelete(),
+    ])
+}

@@ -1,19 +1,19 @@
 import React from 'react';
 import Counter from '../components/Counter'
-import Header from '../components/header'
 import '../style/App.scss';
+import Header from '../components/header';
 
-class Home extends React.Component {
+class Contact extends React.Component {
   render(){
     return (
       <div className="App">
-        <Header/>
-        <p>Hello world</p>
-        <Counter/>
+          <Header/>
+        <p>Contact page</p>
+       
       </div>
     );
   }
   
 }
 
-export default Home;
+export default Contact;
