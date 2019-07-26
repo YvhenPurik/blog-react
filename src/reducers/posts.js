@@ -8,6 +8,7 @@ const initialState = {
     authorName: '',
     data: [],
     users: [],
+    photos: [],
     currentPost: {},
 };
 
@@ -51,6 +52,7 @@ function postsListLoadSuccess(state, action) {
             };
         }),
         users: action.payload.users,
+        photos: action.payload.photos,
     };
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from '../components/Counter'
+import Postlist from '../components/Postlist'
 import Header from '../components/header'
 import '../style/App.scss';
 
@@ -9,7 +9,7 @@ class Home extends React.Component {
       <div className="App">
         <Header/>
         <p>Hello world</p>
-        <Counter/>
+        <Postlist/>
       </div>
     );
   }

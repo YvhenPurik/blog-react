@@ -29,3 +29,22 @@
   color:green;
   background: #61dafb;
 }
+.postList{
+  width: 200px;
+  height: 300px;
+  background: #bbbbbb;
+  color:white;
+  margin-bottom: 20px;
+
+}
+.main{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.NavLink{
+  color:white;
+  text-decoration: none;
+
+}

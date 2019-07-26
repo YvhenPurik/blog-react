@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import { Route, Switch } from 'react-router' // react-router v4/v5
 import { ConnectedRouter } from 'connected-react-router'
 import configureStore, { history } from './store'
+import PostDetails from './components/PostDetails';
 
 const store = configureStore(/* provide initial state if any */)
  
@@ -17,6 +18,7 @@ ReactDOM.render(
         <Switch>
              <Route exact path='/' component={Home}/>
              <Route exact path='/contact' component={Contact}/>
+             <Route exact path='/details' component={PostDetails}/>
              <Route path='*' render={() => (<h1>PAGE NOT FOUND</h1>)}/>
         </Switch>
       </>

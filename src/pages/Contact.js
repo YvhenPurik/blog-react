@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from '../components/Counter'
+import Counter from '../components/Postlist'
 import '../style/App.scss';
 import Header from '../components/header';
 
