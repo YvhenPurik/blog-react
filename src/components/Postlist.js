@@ -12,16 +12,15 @@ class Postlist extends React.Component {
        this.fetchPosts();
   }
 
-  onItemClickHandler = (postId) => {
-      this.props.changePageTo('/details', postId);
-  };
-
+  
   fetchPosts = () => {
       this.props.fetchPosts();
   };
   
   details(el){
-    this.props.fetchPostDetails(el)
+    this.props.fetchPostDetails(el.id)
+    console.log('asdasdad-->',el)
+    localStorage.setItem("postDetails", JSON.stringify(el));
   }
 
   render() {
@@ -33,7 +32,7 @@ class Postlist extends React.Component {
       if(this.props.posts.reducer.data.length > 0){
         postsList =  this.props.posts.reducer.data.map((el)=>{
             return (
-              <NavLink to={'/details'}  className={'NavLink'} onClick={()=>this.details(el.id)}>
+              <NavLink to={'/details'}  className={'NavLink'} onClick={()=>this.details(el)}>
                <div className="col">
                <div className="flex">
                     <div className="card">

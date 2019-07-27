@@ -442,15 +442,72 @@ Link{
 }
 
 .posts-details{
-  background-color: #b316812f;
+  background-color: #ddc5d52f;
   width: 100%;
-  height: 800px;
+  height: 100%;
+  
   .post-details-wrap{
      width: 500px;
      height: 500px;
      background: #fff;
      border-radius: 20px;
-     margin:0 auto;
+     margin:0px auto;
+     position: relative;
+     top: 50px;
+     .text-title{
+       padding-top: 30px;
+     }
+     .author{
+       font-size: 10px;
+     }
+     .body-post{
+       padding-left:30px;
+       padding-right: 30px;
+       padding-top: 130px;
+     }
+     .line-top{
+       border-bottom: rgba(51, 51, 51, 0.137) 1px solid;
+       width: 80%;
+       
+       top: 110px;
+       margin: 0 auto;
+     }
+     .line-bottom{
+      border-bottom: rgba(51, 51, 51, 0.137) 1px solid;
+      width: 90%;
+      top: 350px;
+      margin: 0 auto;
+      padding-top: 110px;
+     }
+     .date-post{
+      font-size: 10px;
+      float: left;
+      padding-left: 25px;
+      padding-top: 25px;
+     }
+  }
+  .coments-wrap{
+    padding-top:60px;
+  }
+  .coments{
+    
+    width:600px;
+    height: 100px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top:30px;
+    margin-bottom: 30px;
+    .coments-email{
+      font-size: 10px;
+      float: left;
+      padding-left:20px;
+      padding-top:20px;
+    }
+    .coments-body{
+      font-size: 14px;
+      padding-top: 25px;
+    }
   }
 }
 
