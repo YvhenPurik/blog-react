@@ -5,6 +5,7 @@ import fetchData from '../sagas/index'
 import {fetchPosts, updateAuthorFilter, fetchPostDetails} from '../actions/posts';
 import Header from './header';
 import moment from 'moment';
+import Footer from './footer';
 
 class PostDetails extends React.Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class PostDetails extends React.Component {
                 </div>
                
           </div>
+          <Footer/>
           
        </div>
     
