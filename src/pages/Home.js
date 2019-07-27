@@ -8,7 +8,7 @@ class Home extends React.Component {
     return (
       <div className="App">
         <Header/>
-        <p>Hello world</p>
+        <h1 className="Home_text">News</h1>
         <Postlist/>
       </div>
     );

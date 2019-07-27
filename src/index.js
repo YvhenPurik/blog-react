@@ -8,6 +8,7 @@ import { Route, Switch } from 'react-router' // react-router v4/v5
 import { ConnectedRouter } from 'connected-react-router'
 import configureStore, { history } from './store'
 import PostDetails from './components/PostDetails';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore(/* provide initial state if any */)
  

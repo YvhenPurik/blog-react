@@ -9,24 +9,22 @@ import Header from './header';
 class PostDetails extends React.Component {
   componentDidMount() {
       
-          this.fetchPosts();
+          // this.fetchPosts();
   }
 
 
-  fetchPosts = () => {
-      this.props.fetchPosts();
-  };
+  // fetchPosts = () => {
+  //     this.props.fetchPosts();
+  // };
 
 
   render() {
-      
+     console.log('info post click-->', this.props.posts.reducer.currentPost) 
    return (
-       <div>
+       <div className="App">
            <Header/>
-          <div className="posts">
-              <main className="main">
-                {123123}
-              </main>
+          <div className="posts-details">
+                <div className="post-details-wrap"></div>
           </div>
        </div>
     
